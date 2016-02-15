@@ -39,13 +39,13 @@ public class GameRenderer {
     }
 
     public void render() {
-        Gdx.gl.glClearColor(55 / 255.0f, 80 / 255.0f, 100 / 255.0f, 1);
+        Gdx.gl.glClearColor(55 / 255.0f, 80 / 255.0f, 100 / 255.0f, 1.0f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         // Draw Dirt
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-        shapeRenderer.setColor(147 / 255.0f, 80 / 255.0f, 27 / 255.0f, 1);
-        shapeRenderer.rect(0, 0, 136, 52);
+        shapeRenderer.setColor(147.0f / 255.0f, 80.0f / 255.0f, 27.0f / 255.0f, 1.0f);
+        shapeRenderer.rect(0.0f, 0.0f, 136.0f, 26.0f);
         shapeRenderer.end();
 
         batch.begin();
