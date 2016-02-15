@@ -2,11 +2,16 @@ package codeguru.flappymath.gameworld;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 
 public class GameRenderer {
+    private final OrthographicCamera cam;
     private final GameWorld world;
 
     public GameRenderer(GameWorld world) {
+        cam = new OrthographicCamera();
+        cam.setToOrtho(true, 136, 204);
+
         this.world = world;
     }
 
