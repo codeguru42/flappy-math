@@ -12,16 +12,14 @@ import codeguru.flappymath.gameobjects.ScrollHandler;
 import codeguru.flappymath.util.AssetLoader;
 
 public class GameRenderer {
-    private final OrthographicCamera cam;
     private final GameWorld world;
     private final ShapeRenderer shapeRenderer = new ShapeRenderer();
     private SpriteBatch batch = new SpriteBatch();
-    private ScrollHandler scroller;
     private Grass frontGrass, backGrass;
     private Pipe pipe1, pipe2, pipe3;
 
     public GameRenderer(GameWorld world) {
-        cam = new OrthographicCamera();
+        OrthographicCamera cam = new OrthographicCamera();
         cam.setToOrtho(false, 136, 204);
 
         this.world = world;
@@ -32,7 +30,7 @@ public class GameRenderer {
     }
 
     private void initGameObjects() {
-        scroller = world.getScroller();
+        ScrollHandler scroller = world.getScroller();
         frontGrass = scroller.getFrontGrass();
         backGrass = scroller.getBackGrass();
         pipe1 = scroller.getPipe1();
