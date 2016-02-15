@@ -18,6 +18,7 @@ public class GameRenderer {
 
         this.world = world;
         sprites = world.getSprites();
+        batch.setProjectionMatrix(cam.combined);
     }
 
     public void render() {
@@ -29,7 +30,7 @@ public class GameRenderer {
 
         batch.begin();
         for (int i = 0; i < sprites.length; i++) {
-            batch.draw(sprites[i], i + 50.0f, i * 50.0f + 100.0f);
+            batch.draw(sprites[i], 0.0f, i * 20.0f + 5.0f);
         }
         batch.end();
     }
