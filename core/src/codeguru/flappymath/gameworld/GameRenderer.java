@@ -4,6 +4,12 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 
 public class GameRenderer {
+    private final GameWorld world;
+
+    public GameRenderer(GameWorld world) {
+        this.world = world;
+    }
+
     public void render() {
         Gdx.app.log("GameRenderer", "render");
         // Sets a Color to Fill the Screen with (RGB = 10, 15, 230), Opacity of 1 (100%)
