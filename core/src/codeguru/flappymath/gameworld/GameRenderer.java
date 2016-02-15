@@ -14,7 +14,7 @@ public class GameRenderer {
 
     public GameRenderer(GameWorld world) {
         cam = new OrthographicCamera();
-        cam.setToOrtho(true, 136, 204);
+        cam.setToOrtho(false, 136, 204);
 
         this.world = world;
         sprites = world.getSprites();
