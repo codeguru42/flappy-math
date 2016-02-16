@@ -12,6 +12,7 @@ import codeguru.flappymath.gameobjects.ScrollHandler;
 import codeguru.flappymath.util.AssetLoader;
 
 public class GameRenderer {
+    public static final int PIPE_VERT_GAP = 45;
     private final GameWorld world;
     private final ShapeRenderer shapeRenderer = new ShapeRenderer();
     private SpriteBatch batch = new SpriteBatch();
@@ -66,36 +67,37 @@ public class GameRenderer {
     }
 
     private void drawSkulls() {
-        batch.draw(AssetLoader.skullUp, pipe1.getX() - 1,
-                pipe1.getY() + pipe1.getHeight() - 14, 24, 14);
         batch.draw(AssetLoader.skullDown, pipe1.getX() - 1,
-                pipe1.getY() + pipe1.getHeight() + 45, 24, 14);
+                pipe1.getY() + pipe1.getHeight() - 14, 24, 14);
+        batch.draw(AssetLoader.skullUp, pipe1.getX() - 1,
+                pipe1.getY() + pipe1.getHeight() + PIPE_VERT_GAP, 24, 14);
 
-        batch.draw(AssetLoader.skullUp, pipe2.getX() - 1,
-                pipe2.getY() + pipe2.getHeight() - 14, 24, 14);
         batch.draw(AssetLoader.skullDown, pipe2.getX() - 1,
-                pipe2.getY() + pipe2.getHeight() + 45, 24, 14);
+                pipe2.getY() + pipe2.getHeight() - 14, 24, 14);
+        batch.draw(AssetLoader.skullUp, pipe2.getX() - 1,
+                pipe2.getY() + pipe2.getHeight() + PIPE_VERT_GAP, 24, 14);
 
-        batch.draw(AssetLoader.skullUp, pipe3.getX() - 1,
-                pipe3.getY() + pipe3.getHeight() - 14, 24, 14);
         batch.draw(AssetLoader.skullDown, pipe3.getX() - 1,
-                pipe3.getY() + pipe3.getHeight() + 45, 24, 14);
+                pipe3.getY() + pipe3.getHeight() - 14, 24, 14);
+        batch.draw(AssetLoader.skullUp, pipe3.getX() - 1,
+                pipe3.getY() + pipe3.getHeight() + PIPE_VERT_GAP, 24, 14);
     }
 
     private void drawPipes() {
+        int winHeight = Gdx.graphics.getHeight();
         batch.draw(AssetLoader.bar, pipe1.getX(), pipe1.getY(), pipe1.getWidth(),
                 pipe1.getHeight());
-        batch.draw(AssetLoader.bar, pipe1.getX(), pipe1.getY() + pipe1.getHeight() + 45,
-                pipe1.getWidth(), 66 - (pipe1.getHeight() + 45));
+        batch.draw(AssetLoader.bar, pipe1.getX(), pipe1.getY() + pipe1.getHeight() + PIPE_VERT_GAP,
+                pipe1.getWidth(), winHeight - pipe1.getHeight());
 
         batch.draw(AssetLoader.bar, pipe2.getX(), pipe2.getY(), pipe2.getWidth(),
                 pipe2.getHeight());
-        batch.draw(AssetLoader.bar, pipe2.getX(), pipe2.getY() + pipe2.getHeight() + 45,
-                pipe2.getWidth(), 66 - (pipe2.getHeight() + 45));
+        batch.draw(AssetLoader.bar, pipe2.getX(), pipe2.getY() + pipe2.getHeight() + PIPE_VERT_GAP,
+                pipe2.getWidth(), winHeight - PIPE_VERT_GAP - pipe2.getHeight());
 
         batch.draw(AssetLoader.bar, pipe3.getX(), pipe3.getY(), pipe3.getWidth(),
                 pipe3.getHeight());
-        batch.draw(AssetLoader.bar, pipe3.getX(), pipe3.getY() + pipe3.getHeight() + 45,
-                pipe3.getWidth(), 66 - (pipe3.getHeight() + 45));
+        batch.draw(AssetLoader.bar, pipe3.getX(), pipe3.getY() + pipe3.getHeight() + PIPE_VERT_GAP,
+                pipe3.getWidth(), winHeight - PIPE_VERT_GAP - pipe3.getHeight());
     }
 }

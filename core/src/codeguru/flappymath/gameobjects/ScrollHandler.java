@@ -1,19 +1,23 @@
 package codeguru.flappymath.gameobjects;
 
 public class ScrollHandler {
+    public static final int SCROLL_SPEED = -59;
+    public static final int PIPE_GAP = 49;
+    public static final int PIPE_START_X = 210;
+    public static final int GRASS_HEIGHT = 11;
+    public static final int PIPE_WIDTH = 22;
+    public static final int PIPE_HEIGHT = 60;
+
     private Grass frontGrass, backGrass;
     private Pipe pipe1, pipe2, pipe3;
 
-    public static final int SCROLL_SPEED = -59;
-    public static final int PIPE_GAP = 49;
-
     public ScrollHandler(float yPos) {
-        frontGrass = new Grass(0, yPos, 143, 11, SCROLL_SPEED);
+        frontGrass = new Grass(0, yPos, 143, GRASS_HEIGHT, SCROLL_SPEED);
         backGrass = new Grass(frontGrass.getTailX(), yPos, 143, 11, SCROLL_SPEED);
 
-        pipe1 = new Pipe(210, 0, 22, 60, SCROLL_SPEED);
-        pipe2 = new Pipe(pipe1.getTailX() + PIPE_GAP, 0, 22, 70, SCROLL_SPEED);
-        pipe3 = new Pipe(pipe2.getTailX() + PIPE_GAP, 0, 22, 60, SCROLL_SPEED);
+        pipe1 = new Pipe(PIPE_START_X, yPos + GRASS_HEIGHT, PIPE_WIDTH, PIPE_HEIGHT, SCROLL_SPEED);
+        pipe2 = new Pipe(pipe1.getTailX() + PIPE_GAP, yPos + GRASS_HEIGHT, PIPE_WIDTH, PIPE_HEIGHT, SCROLL_SPEED);
+        pipe3 = new Pipe(pipe2.getTailX() + PIPE_GAP, yPos + GRASS_HEIGHT, PIPE_WIDTH, PIPE_HEIGHT, SCROLL_SPEED);
     }
 
     public void update(float delta) {
