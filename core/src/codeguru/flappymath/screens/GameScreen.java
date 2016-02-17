@@ -5,6 +5,7 @@ import com.badlogic.gdx.Screen;
 
 import codeguru.flappymath.gameworld.GameRenderer;
 import codeguru.flappymath.gameworld.GameWorld;
+import codeguru.flappymath.util.InputHandler;
 
 public class GameScreen implements Screen {
     private GameWorld world;
@@ -21,6 +22,7 @@ public class GameScreen implements Screen {
 
         world = new GameWorld(midPointY);
         renderer = new GameRenderer(world);
+        Gdx.input.setInputProcessor(new InputHandler(world.getBird()));
     }
 
     @Override
