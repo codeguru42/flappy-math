@@ -12,6 +12,7 @@ public class Bird {
     private float rotation;
     private int width;
     private int height;
+    private boolean isAlive = true;
 
     public Bird(float x, float y, int width, int height) {
         this.width = width;
@@ -33,7 +34,18 @@ public class Bird {
     }
 
     public void onClick() {
-        velocity.y = 140;
+        if (isAlive) {
+            velocity.y = 140;
+        }
+    }
+
+    public void die() {
+        isAlive = false;
+        velocity.y = 0;
+    }
+
+    public void decelerate() {
+        acceleration.y = 0;
     }
 
     public float getX() {

@@ -22,10 +22,13 @@ public class GameWorld {
         if (scroller.collides(bird)) {
             // Clean up on game over
             scroller.stop();
+            bird.die();
         }
 
         if (Intersector.overlaps(bird.getBoundingCircle(), ground)) {
             scroller.stop();
+            bird.die();
+            bird.decelerate();
         }
     }
 
