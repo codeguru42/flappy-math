@@ -1,11 +1,13 @@
 package codeguru.flappymath.gameobjects;
 
+import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
 
 public class Bird {
     private Vector2 position;
     private Vector2 velocity;
     private Vector2 acceleration;
+    private Circle boundingCircle = new Circle();
 
     private float rotation;
     private int width;
@@ -21,6 +23,7 @@ public class Bird {
 
     public void update(float delta) {
         velocity.add(acceleration.cpy().scl(delta));
+        boundingCircle.set(position.x + 9.0f, position.y + 6.0f, 6.5f);
 
         if (velocity.y < -200) {
             velocity.y = -200;
@@ -51,5 +54,9 @@ public class Bird {
 
     public float getRotation() {
         return rotation;
+    }
+
+    public Circle getBoundingCircle() {
+        return boundingCircle;
     }
 }
