@@ -48,6 +48,11 @@ public class Bird {
         acceleration.y = 0;
     }
 
+    @Override
+    public String toString() {
+        return "Bird=<position: " + position + ", velocity: " + velocity + "acceleration: " + acceleration + ">";
+    }
+
     public float getX() {
         return position.x;
     }

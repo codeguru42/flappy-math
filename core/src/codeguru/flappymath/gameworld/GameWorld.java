@@ -1,5 +1,6 @@
 package codeguru.flappymath.gameworld;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 
@@ -18,6 +19,8 @@ public class GameWorld {
     public void update(float delta) {
         bird.update(delta);
         scroller.update(delta);
+
+        Gdx.app.log("Bird", bird.toString());
 
         if (scroller.collides(bird)) {
             // Clean up on game over
