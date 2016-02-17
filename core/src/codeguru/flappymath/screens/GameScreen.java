@@ -9,6 +9,7 @@ import codeguru.flappymath.gameworld.GameWorld;
 public class GameScreen implements Screen {
     private GameWorld world;
     private GameRenderer renderer;
+    private float runTime = 0.0f;
 
     public GameScreen() {
         Gdx.app.log("GameScreen", "attached");
@@ -29,8 +30,9 @@ public class GameScreen implements Screen {
 
     @Override
     public void render(float delta) {
+        runTime += delta;
         world.update(delta);
-        renderer.render();
+        renderer.render(runTime);
     }
 
     @Override

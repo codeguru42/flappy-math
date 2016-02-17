@@ -43,7 +43,7 @@ public class GameRenderer {
         pipe3 = scroller.getPipe3();
     }
 
-    public void render() {
+    public void render(float runTime) {
         Gdx.gl.glClearColor(55 / 255.0f, 80 / 255.0f, 100 / 255.0f, 1.0f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
@@ -60,7 +60,8 @@ public class GameRenderer {
         batch.enableBlending();
         drawSkulls();
 
-        batch.draw(AssetLoader.bird, bird.getX(), bird.getY(), bird.getWidth(), bird.getHeight());
+        batch.draw(AssetLoader.birdAnimation.getKeyFrame(runTime),
+                bird.getX(), bird.getY(), bird.getWidth(), bird.getHeight());
         batch.end();
     }
 
