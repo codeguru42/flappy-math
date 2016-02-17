@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
+import codeguru.flappymath.gameobjects.Bird;
 import codeguru.flappymath.gameobjects.Grass;
 import codeguru.flappymath.gameobjects.Pipe;
 import codeguru.flappymath.gameobjects.ScrollHandler;
@@ -16,6 +17,7 @@ public class GameRenderer {
     private final GameWorld world;
     private final ShapeRenderer shapeRenderer = new ShapeRenderer();
     private SpriteBatch batch = new SpriteBatch();
+    private Bird bird;
     private Grass frontGrass, backGrass;
     private Pipe pipe1, pipe2, pipe3;
 
@@ -31,6 +33,8 @@ public class GameRenderer {
     }
 
     private void initGameObjects() {
+        bird = world.getBird();
+
         ScrollHandler scroller = world.getScroller();
         frontGrass = scroller.getFrontGrass();
         backGrass = scroller.getBackGrass();
@@ -55,6 +59,8 @@ public class GameRenderer {
         drawPipes();
         batch.enableBlending();
         drawSkulls();
+
+        batch.draw(AssetLoader.bird, bird.getX(), bird.getY(), bird.getWidth(), bird.getHeight());
         batch.end();
     }
 
