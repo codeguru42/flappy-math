@@ -1,11 +1,15 @@
 package codeguru.flappymath.gameworld;
 
+import com.badlogic.gdx.math.Intersector;
+import com.badlogic.gdx.math.Rectangle;
+
 import codeguru.flappymath.gameobjects.Bird;
 import codeguru.flappymath.gameobjects.ScrollHandler;
 
 public class GameWorld {
     private ScrollHandler scroller = new ScrollHandler(26.0f);
     private Bird bird;
+    private Rectangle ground = new Rectangle(0.0f, 0.0f, 136.0f, 26.0f);
 
     public GameWorld(int midPointY) {
         bird = new Bird(33, midPointY - 5, 17, 12);
@@ -17,6 +21,10 @@ public class GameWorld {
 
         if (scroller.collides(bird)) {
             // Clean up on game over
+            scroller.stop();
+        }
+
+        if (Intersector.overlaps(bird.getBoundingCircle(), ground)) {
             scroller.stop();
         }
     }
