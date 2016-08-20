@@ -1,6 +1,7 @@
 package codeguru.flappymath.gameworld;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 
@@ -28,7 +29,14 @@ public class GameWorld {
             bird.die();
         }
 
+        Circle c = bird.getBoundingCircle();
+        if (c.y < ground.height) {
+            Gdx.app.log("Bounding Circle: ", c.toString());
+            Gdx.app.log("Ground: ", ground.toString());
+        }
+
         if (Intersector.overlaps(bird.getBoundingCircle(), ground)) {
+            Gdx.app.log("GameWorld", "collision with ground");
             scroller.stop();
             bird.die();
             bird.decelerate();
