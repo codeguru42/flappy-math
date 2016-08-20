@@ -15,7 +15,7 @@ import codeguru.flappymath.util.AssetLoader;
 public class GameRenderer {
     public static final int PIPE_VERT_GAP = 45;
     public static final float GROUND_WIDTH = 136.0f;
-    public static final float GROUND_HEIGHT = 26.0f;
+    public static final float GROUND_HEIGHT = 37.0f;
 
     private final GameWorld world;
     private final ShapeRenderer shapeRenderer = new ShapeRenderer();
