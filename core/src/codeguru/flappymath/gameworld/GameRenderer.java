@@ -14,6 +14,9 @@ import codeguru.flappymath.util.AssetLoader;
 
 public class GameRenderer {
     public static final int PIPE_VERT_GAP = 45;
+    public static final float GROUND_WIDTH = 136.0f;
+    public static final float GROUND_HEIGHT = 26.0f;
+
     private final GameWorld world;
     private final ShapeRenderer shapeRenderer = new ShapeRenderer();
     private SpriteBatch batch = new SpriteBatch();
@@ -50,7 +53,7 @@ public class GameRenderer {
         // Draw Dirt
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setColor(147.0f / 255.0f, 80.0f / 255.0f, 27.0f / 255.0f, 1.0f);
-        shapeRenderer.rect(0.0f, 0.0f, 136.0f, 26.0f);
+        shapeRenderer.rect(0.0f, 0.0f, GROUND_WIDTH, GROUND_HEIGHT);
         shapeRenderer.end();
 
         batch.begin();

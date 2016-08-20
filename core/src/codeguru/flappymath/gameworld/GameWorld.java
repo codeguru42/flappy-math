@@ -11,7 +11,7 @@ import codeguru.flappymath.gameobjects.ScrollHandler;
 public class GameWorld {
     private ScrollHandler scroller = new ScrollHandler(26.0f);
     private Bird bird;
-    private Rectangle ground = new Rectangle(0.0f, 0.0f, 136.0f, 26.0f);
+    private Rectangle ground = new Rectangle(0.0f, 0.0f, GameRenderer.GROUND_WIDTH, GameRenderer.GROUND_HEIGHT);
 
     public GameWorld(int midPointY) {
         bird = new Bird(33, midPointY - 5, 17, 12);
