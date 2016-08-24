@@ -2,6 +2,8 @@ package codeguru.mathybird.gameobjects;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import codeguru.mathybird.gameworld.GameWorld;
+
 public class ScrollHandler implements GameObject {
     public static final int SCROLL_SPEED = -59;
     public static final int PIPE_GAP = 49;
@@ -12,8 +14,10 @@ public class ScrollHandler implements GameObject {
 
     private Grass frontGrass, backGrass;
     private Pipe pipe1, pipe2, pipe3;
+    private GameWorld gameWorld;
 
-    public ScrollHandler(float yPos) {
+    public ScrollHandler(GameWorld gameWorld, float yPos) {
+        this.gameWorld = gameWorld;
         frontGrass = new Grass(0, yPos, 143, GRASS_HEIGHT, SCROLL_SPEED);
         backGrass = new Grass(frontGrass.getTailX(), yPos, 143, 11, SCROLL_SPEED);
 
@@ -61,7 +65,28 @@ public class ScrollHandler implements GameObject {
     }
 
     public boolean collides(Bird bird) {
+        if (!pipe1.isScored()
+                && pipe1.getX() + (pipe1.getWidth() / 2) < bird.getX()
+                + bird.getWidth()) {
+            addScore(1);
+            pipe1.setScored(true);
+        } else if (!pipe2.isScored()
+                && pipe2.getX() + (pipe2.getWidth() / 2) < bird.getX()
+                + bird.getWidth()) {
+            addScore(1);
+            pipe2.setScored(true);
+        } else if (!pipe3.isScored()
+                && pipe3.getX() + (pipe3.getWidth() / 2) < bird.getX()
+                + bird.getWidth()) {
+            addScore(1);
+            pipe3.setScored(true);
+        }
+
         return (pipe1.collides(bird) || pipe2.collides(bird) || pipe3.collides(bird));
+    }
+
+    private void addScore(int increment) {
+        gameWorld.addScore(increment);
     }
 
     public void stop() {

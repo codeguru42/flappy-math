@@ -20,6 +20,7 @@ public class Pipe extends Scrollable {
     private Rectangle skullDown = new Rectangle();
     private Rectangle barUp = new Rectangle();
     private Rectangle barDown = new Rectangle();
+    private boolean isScored = false;
 
     public Pipe(float x, float y, int width, int height, float scrollSpeed) {
         super(x, y, width, height, scrollSpeed);
@@ -30,6 +31,7 @@ public class Pipe extends Scrollable {
     public void reset(float newX) {
         super.reset(newX);
         height = r.nextInt(90) + 15;
+        isScored = false;
     }
 
     @Override
@@ -66,5 +68,13 @@ public class Pipe extends Scrollable {
                 || Intersector.overlaps(bird.getBoundingCircle(), barDown)
                 || Intersector.overlaps(bird.getBoundingCircle(), skullUp)
                 || Intersector.overlaps(bird.getBoundingCircle(), skullDown));
+    }
+
+    public boolean isScored() {
+        return isScored;
+    }
+
+    public void setScored(boolean b) {
+        isScored = b;
     }
 }

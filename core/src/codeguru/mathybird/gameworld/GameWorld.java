@@ -9,9 +9,10 @@ import codeguru.mathybird.gameobjects.Bird;
 import codeguru.mathybird.gameobjects.ScrollHandler;
 
 public class GameWorld {
-    private ScrollHandler scroller = new ScrollHandler(26.0f);
+    private ScrollHandler scroller = new ScrollHandler(this, 26.0f);
     private Bird bird;
     private Rectangle ground = new Rectangle(0.0f, 0.0f, GameRenderer.GROUND_WIDTH, GameRenderer.GROUND_HEIGHT);
+    private int score = 0;
 
     public GameWorld(int midPointY) {
         bird = new Bird(33, midPointY - 5, 17, 12);
@@ -50,5 +51,13 @@ public class GameWorld {
 
     public ScrollHandler getScroller() {
         return scroller;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void addScore(int increment) {
+        score += increment;
     }
 }
