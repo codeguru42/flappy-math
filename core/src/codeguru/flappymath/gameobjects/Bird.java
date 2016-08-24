@@ -104,6 +104,6 @@ public class Bird {
     }
 
     public boolean shouldntFlap() {
-        return velocity.y < -70;
+        return velocity.y < -70 || !isAlive;
     }
 }
