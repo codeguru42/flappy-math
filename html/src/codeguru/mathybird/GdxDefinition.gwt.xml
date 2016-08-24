@@ -3,8 +3,8 @@
 <module rename-to="html">
 	<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
 
-	<inherits name='FlappyMathGame' />
-	<entry-point class='codeguru.flappymath.client.HtmlLauncher' />
+	<inherits name='MathyBirdGame' />
+	<entry-point class='codeguru.mathybird.client.HtmlLauncher' />
 	
 	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
 </module>

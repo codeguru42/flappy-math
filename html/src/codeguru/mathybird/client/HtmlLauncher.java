@@ -1,9 +1,9 @@
-package codeguru.flappymath.client;
+package codeguru.mathybird.client;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import codeguru.flappymath.FlappyMathGame;
+import codeguru.mathybird.MathyBirdGame;
 
 public class HtmlLauncher extends GwtApplication {
 
@@ -14,6 +14,6 @@ public class HtmlLauncher extends GwtApplication {
 
         @Override
         public ApplicationListener createApplicationListener () {
-                return new FlappyMathGame();
+                return new MathyBirdGame();
         }
 }

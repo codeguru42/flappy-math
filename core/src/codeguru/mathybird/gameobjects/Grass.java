@@ -1,4 +1,4 @@
-package codeguru.flappymath.gameobjects;
+package codeguru.mathybird.gameobjects;
 
 public class Grass extends Scrollable {
     public Grass(float x, float y, int width, int height, float scrollSpeed) {

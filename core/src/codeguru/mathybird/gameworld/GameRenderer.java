@@ -1,4 +1,4 @@
-package codeguru.flappymath.gameworld;
+package codeguru.mathybird.gameworld;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -6,11 +6,11 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
-import codeguru.flappymath.gameobjects.Bird;
-import codeguru.flappymath.gameobjects.Grass;
-import codeguru.flappymath.gameobjects.Pipe;
-import codeguru.flappymath.gameobjects.ScrollHandler;
-import codeguru.flappymath.util.AssetLoader;
+import codeguru.mathybird.gameobjects.Bird;
+import codeguru.mathybird.gameobjects.Grass;
+import codeguru.mathybird.gameobjects.Pipe;
+import codeguru.mathybird.gameobjects.ScrollHandler;
+import codeguru.mathybird.util.AssetLoader;
 
 public class GameRenderer {
     public static final int PIPE_VERT_GAP = 45;

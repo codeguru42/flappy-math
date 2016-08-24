@@ -15,7 +15,7 @@ android {
         instrumentTest.setRoot('tests')
     }
     defaultConfig {
-        applicationId "codeguru.flappymath"
+        applicationId "codeguru.mathybird"
         minSdkVersion 8
         targetSdkVersion 24
     }
@@ -68,7 +68,7 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'codeguru.flappymath/codeguru.flappymath.AndroidLauncher'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'codeguru.mathybird/codeguru.mathybird.AndroidLauncher'
 }
 
 // sets up the Android Eclipse project, using the old Ant based build.

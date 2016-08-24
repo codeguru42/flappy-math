@@ -1,12 +1,12 @@
-package codeguru.flappymath;
+package codeguru.mathybird;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 
-import codeguru.flappymath.screens.GameScreen;
-import codeguru.flappymath.util.AssetLoader;
+import codeguru.mathybird.screens.GameScreen;
+import codeguru.mathybird.util.AssetLoader;
 
-public class FlappyMathGame extends Game {
+public class MathyBirdGame extends Game {
 	@Override
 	public void create() {
 		Gdx.app.log("ZBGame", "created");

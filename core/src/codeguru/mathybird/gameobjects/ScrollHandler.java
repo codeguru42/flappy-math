@@ -1,4 +1,4 @@
-package codeguru.flappymath.gameobjects;
+package codeguru.mathybird.gameobjects;
 
 public class ScrollHandler {
     public static final int SCROLL_SPEED = -59;

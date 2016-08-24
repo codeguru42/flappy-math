@@ -4,7 +4,7 @@ sourceCompatibility = '1.7'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 ext {
-	mainClassName = "codeguru.flappymath.IOSLauncher"
+	mainClassName = "codeguru.mathybird.IOSLauncher"
 }
 
 launchIPhoneSimulator.dependsOn build

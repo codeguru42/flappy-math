@@ -1,8 +1,8 @@
-package codeguru.flappymath.util;
+package codeguru.mathybird.util;
 
 import com.badlogic.gdx.InputAdapter;
 
-import codeguru.flappymath.gameobjects.Bird;
+import codeguru.mathybird.gameobjects.Bird;
 
 public class InputHandler extends InputAdapter {
     private Bird myBird;

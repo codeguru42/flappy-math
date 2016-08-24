@@ -1,11 +1,11 @@
-package codeguru.flappymath.screens;
+package codeguru.mathybird.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 
-import codeguru.flappymath.gameworld.GameRenderer;
-import codeguru.flappymath.gameworld.GameWorld;
-import codeguru.flappymath.util.InputHandler;
+import codeguru.mathybird.gameworld.GameRenderer;
+import codeguru.mathybird.gameworld.GameWorld;
+import codeguru.mathybird.util.InputHandler;
 
 public class GameScreen implements Screen {
     private GameWorld world;

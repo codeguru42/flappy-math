@@ -1,4 +1,4 @@
-package codeguru.flappymath.gameobjects;
+package codeguru.mathybird.gameobjects;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Intersector;

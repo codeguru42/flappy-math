@@ -1,15 +1,15 @@
-package codeguru.flappymath.desktop;
+package codeguru.mathybird.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import codeguru.flappymath.FlappyMathGame;
+import codeguru.mathybird.MathyBirdGame;
 
 public class DesktopLauncher {
 	public static void main(String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		config.title = "Flappy Math";
+		config.title = "Mathy Bird";
 		config.width = (int)(272 * 1.5);
 		config.height = (int)(408 * 1.5);
-		new LwjglApplication(new FlappyMathGame(), config);
+		new LwjglApplication(new MathyBirdGame(), config);
 	}
 }

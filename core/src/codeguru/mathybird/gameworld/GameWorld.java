@@ -1,12 +1,12 @@
-package codeguru.flappymath.gameworld;
+package codeguru.mathybird.gameworld;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 
-import codeguru.flappymath.gameobjects.Bird;
-import codeguru.flappymath.gameobjects.ScrollHandler;
+import codeguru.mathybird.gameobjects.Bird;
+import codeguru.mathybird.gameobjects.ScrollHandler;
 
 public class GameWorld {
     private ScrollHandler scroller = new ScrollHandler(26.0f);

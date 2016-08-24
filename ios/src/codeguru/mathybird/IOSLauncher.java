@@ -1,17 +1,16 @@
-package codeguru.flappymath;
+package codeguru.mathybird;
 
 import org.robovm.apple.foundation.NSAutoreleasePool;
 import org.robovm.apple.uikit.UIApplication;
 
 import com.badlogic.gdx.backends.iosrobovm.IOSApplication;
 import com.badlogic.gdx.backends.iosrobovm.IOSApplicationConfiguration;
-import codeguru.flappymath.FlappyMathGame;
 
 public class IOSLauncher extends IOSApplication.Delegate {
     @Override
     protected IOSApplication createApplication() {
         IOSApplicationConfiguration config = new IOSApplicationConfiguration();
-        return new IOSApplication(new FlappyMathGame(), config);
+        return new IOSApplication(new MathyBirdGame(), config);
     }
 
     public static void main(String[] argv) {
