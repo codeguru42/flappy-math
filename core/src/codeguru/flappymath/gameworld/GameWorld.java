@@ -23,7 +23,7 @@ public class GameWorld {
 
         Gdx.app.log("Bird", bird.toString());
 
-        if (scroller.collides(bird)) {
+        if (scroller.collides(bird) && bird.isAlive()) {
             // Clean up on game over
             scroller.stop();
             bird.die();

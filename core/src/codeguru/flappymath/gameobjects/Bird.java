@@ -76,4 +76,8 @@ public class Bird {
     public Circle getBoundingCircle() {
         return boundingCircle;
     }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
 }
