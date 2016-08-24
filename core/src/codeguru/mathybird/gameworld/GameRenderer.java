@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 import codeguru.mathybird.gameobjects.Bird;
 import codeguru.mathybird.gameobjects.ScrollHandler;
+import codeguru.mathybird.util.AssetLoader;
 
 public class GameRenderer {
     public static final float GROUND_WIDTH = 136.0f;
@@ -48,6 +49,12 @@ public class GameRenderer {
         batch.begin();
         scroller.render(batch, runTime);
         bird.render(batch, runTime);
+
+        String score = world.getScore() + "";
+        AssetLoader.shadow.draw(batch, score,
+                (136 / 2) - (3 * score.length()), 12);
+        AssetLoader.font.draw(batch, "" + score,
+                (136 / 2) - (3 * score.length() - 1), 11);
         batch.end();
     }
 }

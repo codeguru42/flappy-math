@@ -3,6 +3,7 @@ package codeguru.mathybird.util;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class AssetLoader {
@@ -13,6 +14,7 @@ public class AssetLoader {
     public static TextureRegion bird, birdDown, birdUp;
 
     public static TextureRegion skullUp, skullDown, bar;
+    public static BitmapFont font, shadow;
 
     public static void load() {
         texture = new Texture(Gdx.files.internal("texture.png"));
@@ -33,6 +35,11 @@ public class AssetLoader {
         skullUp.flip(false, true);
 
         bar = new TextureRegion(texture, 136, 16, 22, 3);
+
+        font = new BitmapFont(Gdx.files.internal("text.fnt"));
+        font.getData().setScale(.25f, .25f);
+        shadow = new BitmapFont(Gdx.files.internal("shadow.fnt"));
+        shadow.getData().setScale(.25f, .25f);
     }
 
     public static void dispose() {
