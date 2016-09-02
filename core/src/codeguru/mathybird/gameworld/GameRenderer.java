@@ -62,19 +62,7 @@ public class GameRenderer {
         drawPipes();
         batch.enableBlending();
         drawSkulls();
-
-        if (bird.shouldntFlap()) {
-            batch.draw(AssetLoader.bird, bird.getX(), bird.getY(),
-                    bird.getWidth() / 2.0f, bird.getHeight() / 2.0f,
-                    bird.getWidth(), bird.getHeight(), 1, 1, bird.getRotation());
-
-        } else {
-            batch.draw(AssetLoader.birdAnimation.getKeyFrame(runTime), bird.getX(),
-                    bird.getY(), bird.getWidth() / 2.0f,
-                    bird.getHeight() / 2.0f, bird.getWidth(), bird.getHeight(),
-                    1, 1, bird.getRotation());
-        }
-
+        bird.render(batch, runTime);
         batch.end();
     }
 
