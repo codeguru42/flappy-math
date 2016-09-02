@@ -67,20 +67,4 @@ public class Pipe extends Scrollable {
                 || Intersector.overlaps(bird.getBoundingCircle(), skullUp)
                 || Intersector.overlaps(bird.getBoundingCircle(), skullDown));
     }
-
-    public Rectangle getSkullUp() {
-        return skullUp;
-    }
-
-    public Rectangle getSkullDown() {
-        return skullDown;
-    }
-
-    public Rectangle getBarUp() {
-        return barUp;
-    }
-
-    public Rectangle getBarDown() {
-        return barDown;
-    }
 }
