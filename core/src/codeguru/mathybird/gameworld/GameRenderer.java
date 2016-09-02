@@ -7,8 +7,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 import codeguru.mathybird.gameobjects.Bird;
-import codeguru.mathybird.gameobjects.Grass;
-import codeguru.mathybird.gameobjects.Pipe;
 import codeguru.mathybird.gameobjects.ScrollHandler;
 
 public class GameRenderer {
