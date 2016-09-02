@@ -10,10 +10,8 @@ import codeguru.mathybird.gameobjects.Bird;
 import codeguru.mathybird.gameobjects.Grass;
 import codeguru.mathybird.gameobjects.Pipe;
 import codeguru.mathybird.gameobjects.ScrollHandler;
-import codeguru.mathybird.util.AssetLoader;
 
 public class GameRenderer {
-    public static final int PIPE_VERT_GAP = 45;
     public static final float GROUND_WIDTH = 136.0f;
     public static final float GROUND_HEIGHT = 37.0f;
 
@@ -57,48 +55,12 @@ public class GameRenderer {
         shapeRenderer.end();
 
         batch.begin();
-        batch.disableBlending();
         frontGrass.render(batch, runTime);
         backGrass.render(batch, runTime);
-        drawPipes();
-        batch.enableBlending();
-        drawSkulls();
+        pipe1.render(batch, runTime);
+        pipe2.render(batch, runTime);
+        pipe3.render(batch, runTime);
         bird.render(batch, runTime);
         batch.end();
-    }
-
-    private void drawSkulls() {
-        batch.draw(AssetLoader.skullDown, pipe1.getX() - 1,
-                pipe1.getY() + pipe1.getHeight() - 14, 24, 14);
-        batch.draw(AssetLoader.skullUp, pipe1.getX() - 1,
-                pipe1.getY() + pipe1.getHeight() + PIPE_VERT_GAP, 24, 14);
-
-        batch.draw(AssetLoader.skullDown, pipe2.getX() - 1,
-                pipe2.getY() + pipe2.getHeight() - 14, 24, 14);
-        batch.draw(AssetLoader.skullUp, pipe2.getX() - 1,
-                pipe2.getY() + pipe2.getHeight() + PIPE_VERT_GAP, 24, 14);
-
-        batch.draw(AssetLoader.skullDown, pipe3.getX() - 1,
-                pipe3.getY() + pipe3.getHeight() - 14, 24, 14);
-        batch.draw(AssetLoader.skullUp, pipe3.getX() - 1,
-                pipe3.getY() + pipe3.getHeight() + PIPE_VERT_GAP, 24, 14);
-    }
-
-    private void drawPipes() {
-        int winHeight = Gdx.graphics.getHeight();
-        batch.draw(AssetLoader.bar, pipe1.getX(), pipe1.getY(), pipe1.getWidth(),
-                pipe1.getHeight());
-        batch.draw(AssetLoader.bar, pipe1.getX(), pipe1.getY() + pipe1.getHeight() + PIPE_VERT_GAP,
-                pipe1.getWidth(), winHeight - pipe1.getHeight());
-
-        batch.draw(AssetLoader.bar, pipe2.getX(), pipe2.getY(), pipe2.getWidth(),
-                pipe2.getHeight());
-        batch.draw(AssetLoader.bar, pipe2.getX(), pipe2.getY() + pipe2.getHeight() + PIPE_VERT_GAP,
-                pipe2.getWidth(), winHeight - PIPE_VERT_GAP - pipe2.getHeight());
-
-        batch.draw(AssetLoader.bar, pipe3.getX(), pipe3.getY(), pipe3.getWidth(),
-                pipe3.getHeight());
-        batch.draw(AssetLoader.bar, pipe3.getX(), pipe3.getY() + pipe3.getHeight() + PIPE_VERT_GAP,
-                pipe3.getWidth(), winHeight - PIPE_VERT_GAP - pipe3.getHeight());
     }
 }

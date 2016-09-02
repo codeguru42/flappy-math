@@ -7,6 +7,8 @@ import com.badlogic.gdx.math.Rectangle;
 
 import java.util.Random;
 
+import codeguru.mathybird.util.AssetLoader;
+
 public class Pipe extends Scrollable {
     public static final int VERTICAL_GAP = 45;
     public static final int SKULL_WIDTH = 24;
@@ -46,7 +48,16 @@ public class Pipe extends Scrollable {
 
     @Override
     public void render(SpriteBatch batch, float runTime) {
+        int winHeight = Gdx.graphics.getHeight();
+        batch.draw(AssetLoader.bar, getX(), getY(), getWidth(),
+                getHeight());
+        batch.draw(AssetLoader.bar, getX(), getY() + getHeight() + VERTICAL_GAP,
+                getWidth(), winHeight - getHeight());
 
+        batch.draw(AssetLoader.skullDown, getX() - 1,
+                getY() + getHeight() - 14, 24, 14);
+        batch.draw(AssetLoader.skullUp, getX() - 1,
+                getY() + getHeight() + VERTICAL_GAP, 24, 14);
     }
 
     public boolean collides(Bird bird) {
