@@ -58,20 +58,13 @@ public class GameRenderer {
 
         batch.begin();
         batch.disableBlending();
-        drawGrass();
+        frontGrass.render(batch, runTime);
+        backGrass.render(batch, runTime);
         drawPipes();
         batch.enableBlending();
         drawSkulls();
         bird.render(batch, runTime);
         batch.end();
-    }
-
-    private void drawGrass() {
-        // Draw the grass
-        batch.draw(AssetLoader.grass, frontGrass.getX(), frontGrass.getY(),
-                frontGrass.getWidth(), frontGrass.getHeight());
-        batch.draw(AssetLoader.grass, backGrass.getX(), backGrass.getY(),
-                backGrass.getWidth(), backGrass.getHeight());
     }
 
     private void drawSkulls() {
