@@ -1,6 +1,7 @@
 package codeguru.mathybird.gameobjects;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 
@@ -41,6 +42,11 @@ public class Pipe extends Scrollable {
                 - SKULL_HEIGHT, SKULL_WIDTH, SKULL_HEIGHT);
         skullDown.set(position.x - (SKULL_WIDTH - width) / 2, barDown.y,
                 SKULL_WIDTH, SKULL_HEIGHT);
+    }
+
+    @Override
+    public void render(SpriteBatch batch, float runTime) {
+
     }
 
     public boolean collides(Bird bird) {

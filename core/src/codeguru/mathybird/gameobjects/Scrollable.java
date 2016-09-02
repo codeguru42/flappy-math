@@ -2,7 +2,7 @@ package codeguru.mathybird.gameobjects;
 
 import com.badlogic.gdx.math.Vector2;
 
-public class Scrollable {
+public abstract class Scrollable implements GameObject {
     protected Vector2 position;
     protected Vector2 velocity;
     protected int width;
