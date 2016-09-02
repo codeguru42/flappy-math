@@ -19,8 +19,7 @@ public class GameRenderer {
     private final ShapeRenderer shapeRenderer = new ShapeRenderer();
     private SpriteBatch batch = new SpriteBatch();
     private Bird bird;
-    private Grass frontGrass, backGrass;
-    private Pipe pipe1, pipe2, pipe3;
+    private ScrollHandler scroller;
 
     public GameRenderer(GameWorld world) {
         OrthographicCamera cam = new OrthographicCamera();
@@ -35,13 +34,7 @@ public class GameRenderer {
 
     private void initGameObjects() {
         bird = world.getBird();
-
-        ScrollHandler scroller = world.getScroller();
-        frontGrass = scroller.getFrontGrass();
-        backGrass = scroller.getBackGrass();
-        pipe1 = scroller.getPipe1();
-        pipe2 = scroller.getPipe2();
-        pipe3 = scroller.getPipe3();
+        scroller = world.getScroller();
     }
 
     public void render(float runTime) {
@@ -55,11 +48,7 @@ public class GameRenderer {
         shapeRenderer.end();
 
         batch.begin();
-        frontGrass.render(batch, runTime);
-        backGrass.render(batch, runTime);
-        pipe1.render(batch, runTime);
-        pipe2.render(batch, runTime);
-        pipe3.render(batch, runTime);
+        scroller.render(batch, runTime);
         bird.render(batch, runTime);
         batch.end();
     }
