@@ -24,7 +24,7 @@ public class GameRenderer {
 
     public GameRenderer(GameWorld world) {
         OrthographicCamera cam = new OrthographicCamera();
-        cam.setToOrtho(false, 136, 204);
+        cam.setToOrtho(false, WORLD_WIDTH, WORLD_HEIGHT);
 
         this.world = world;
         batch.setProjectionMatrix(cam.combined);
