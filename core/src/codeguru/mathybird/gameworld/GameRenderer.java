@@ -11,7 +11,9 @@ import codeguru.mathybird.gameobjects.ScrollHandler;
 import codeguru.mathybird.util.AssetLoader;
 
 public class GameRenderer {
-    public static final float GROUND_WIDTH = 136.0f;
+    public static final float WORLD_WIDTH = 136.0f;
+    public static final float WORLD_HEIGHT = 204.0f;
+    public static final float GROUND_WIDTH = WORLD_WIDTH;
     public static final float GROUND_HEIGHT = 37.0f;
 
     private final GameWorld world;
@@ -52,9 +54,9 @@ public class GameRenderer {
 
         String score = world.getScore() + "";
         AssetLoader.shadow.draw(batch, score,
-                (136 / 2) - (3 * score.length()), 12);
+                (136 / 2) - (3 * score.length()), WORLD_HEIGHT - 12);
         AssetLoader.font.draw(batch, "" + score,
-                (136 / 2) - (3 * score.length() - 1), 11);
+                (136 / 2) - (3 * score.length() - 1), WORLD_HEIGHT - 11);
         batch.end();
     }
 }
