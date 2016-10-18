@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
 
+import codeguru.mathybird.gameworld.GameRenderer;
 import codeguru.mathybird.util.AssetLoader;
 
 public class Bird implements GameObject {
@@ -32,6 +33,11 @@ public class Bird implements GameObject {
 
         if (velocity.y < -200) {
             velocity.y = -200;
+        }
+
+        if (position.y > GameRenderer.WORLD_HEIGHT - 13) {
+            position.y = GameRenderer.WORLD_HEIGHT - 13;
+            velocity.y = 0;
         }
 
         position.add(velocity.cpy().scl(delta));
