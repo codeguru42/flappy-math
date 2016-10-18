@@ -9,7 +9,6 @@ import codeguru.mathybird.util.AssetLoader;
 public class MathyBirdGame extends Game {
 	@Override
 	public void create() {
-		Gdx.app.log("ZBGame", "created");
 		AssetLoader.load();
 		setScreen(new GameScreen());
 	}

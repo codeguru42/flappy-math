@@ -1,6 +1,5 @@
 package codeguru.mathybird.gameworld;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
@@ -22,8 +21,6 @@ public class GameWorld {
         bird.update(delta);
         scroller.update(delta);
 
-        Gdx.app.log("Bird", bird.toString());
-
         if (scroller.collides(bird) && bird.isAlive()) {
             // Clean up on game over
             scroller.stop();
@@ -31,13 +28,8 @@ public class GameWorld {
         }
 
         Circle c = bird.getBoundingCircle();
-        if (c.y < ground.height) {
-            Gdx.app.log("Bounding Circle: ", c.toString());
-            Gdx.app.log("Ground: ", ground.toString());
-        }
 
         if (Intersector.overlaps(bird.getBoundingCircle(), ground)) {
-            Gdx.app.log("GameWorld", "collision with ground");
             scroller.stop();
             bird.die();
             bird.decelerate();
