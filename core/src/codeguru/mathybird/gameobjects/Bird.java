@@ -35,8 +35,8 @@ public class Bird implements GameObject {
             velocity.y = -200;
         }
 
-        if (position.y > GameRenderer.WORLD_HEIGHT - 13) {
-            position.y = GameRenderer.WORLD_HEIGHT - 13;
+        if (position.y > GameRenderer.WORLD_HEIGHT - height - 1) {
+            position.y = GameRenderer.WORLD_HEIGHT - height - 1;
             velocity.y = 0;
         }
 
