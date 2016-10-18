@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.Rectangle;
 
 import java.util.Random;
 
+import codeguru.mathybird.gameworld.GameRenderer;
 import codeguru.mathybird.util.AssetLoader;
 
 public class Pipe extends Scrollable {
@@ -50,11 +51,10 @@ public class Pipe extends Scrollable {
 
     @Override
     public void render(SpriteBatch batch, float runTime) {
-        int winHeight = Gdx.graphics.getHeight();
         batch.draw(AssetLoader.bar, getX(), getY(), getWidth(),
                 getHeight());
         batch.draw(AssetLoader.bar, getX(), getY() + getHeight() + VERTICAL_GAP,
-                getWidth(), winHeight - getHeight());
+                getWidth(), GameRenderer.WORLD_HEIGHT - getHeight());
 
         batch.draw(AssetLoader.skullDown, getX() - 1,
                 getY() + getHeight() - 14, 24, 14);
