@@ -2,12 +2,13 @@ package codeguru.mathybird.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.ScreenAdapter;
 
 import codeguru.mathybird.gameworld.GameRenderer;
 import codeguru.mathybird.gameworld.GameWorld;
 import codeguru.mathybird.util.InputHandler;
 
-public class GameScreen implements Screen {
+public class GameScreen extends ScreenAdapter {
     private GameWorld world;
     private GameRenderer renderer;
     private float runTime = 0.0f;
@@ -25,34 +26,9 @@ public class GameScreen implements Screen {
     }
 
     @Override
-    public void show() {
-    }
-
-    @Override
     public void render(float delta) {
         runTime += delta;
         world.update(delta);
         renderer.render(runTime);
-    }
-
-    @Override
-    public void resize(int width, int height) {
-    }
-
-    @Override
-    public void pause() {
-    }
-
-    @Override
-    public void resume() {
-    }
-
-    @Override
-    public void hide() {
-    }
-
-    @Override
-    public void dispose() {
-        // Leave blank
     }
 }
