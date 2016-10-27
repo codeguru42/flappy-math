@@ -1,13 +1,13 @@
 package codeguru.mathybird.util;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class AssetLoader {
-    public static Texture texture;
+    public static TextureAtlas atlas;
     public static TextureRegion bg, grass;
 
     public static Animation birdAnimation;
@@ -17,24 +17,23 @@ public class AssetLoader {
     public static BitmapFont font, shadow;
 
     public static void load() {
-        texture = new Texture(Gdx.files.internal("texture.png"));
-        texture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+        atlas = new TextureAtlas("texture.atlas");
 
-        bg = new TextureRegion(texture, 0, 0, 136, 43);
-        grass = new TextureRegion(texture, 0, 43, 143, 11);
-        birdDown = new TextureRegion(texture, 136, 0, 17, 12);
-        bird = new TextureRegion(texture, 153, 0, 17, 12);
-        birdUp = new TextureRegion(texture, 170, 0, 17, 12);
+        bg = atlas.findRegion("bg");
+        grass = atlas.findRegion("grass");
+        birdDown = atlas.findRegion("bird-down");
+        bird = atlas.findRegion("bird");
+        birdUp = atlas.findRegion("bird-up");
 
         TextureRegion[] birds = { birdDown, bird, birdUp };
         birdAnimation = new Animation(0.06f, birds);
         birdAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
-        skullDown = new TextureRegion(texture, 192, 0, 24, 14);
+        skullDown = atlas.findRegion("p1");
         skullUp = new TextureRegion(skullDown);
         skullUp.flip(false, true);
 
-        bar = new TextureRegion(texture, 136, 16, 22, 3);
+        bar = atlas.findRegion("p2");
 
         font = new BitmapFont(Gdx.files.internal("text.fnt"));
         font.getData().setScale(.25f, .25f);
@@ -43,6 +42,6 @@ public class AssetLoader {
     }
 
     public static void dispose() {
-        texture.dispose();
+        atlas.dispose();
     }
 }

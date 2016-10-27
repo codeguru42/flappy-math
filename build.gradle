@@ -1,4 +1,8 @@
 buildscript {
+    ext {
+        gdxVersion = '1.9.2'
+    }
+
     repositories {
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
@@ -8,6 +12,7 @@ buildscript {
         classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
         classpath 'com.android.tools.build:gradle:2.2.3'
         classpath 'org.robovm:robovm-gradle-plugin:1.12.0'
+        classpath "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
     }
 }
 
@@ -18,7 +23,6 @@ allprojects {
     version = '1.0'
     ext {
         appName = "MathyBird"
-        gdxVersion = '1.9.2'
         roboVMVersion = '1.12.0'
         box2DLightsVersion = '1.4'
         ashleyVersion = '1.7.0'
