@@ -11,6 +11,6 @@ public class Grass extends Scrollable {
 
     @Override
     public void render(SpriteBatch batch, float runTime) {
-        batch.draw(AssetLoader.grass, getX(), getY(), getWidth(), getHeight());
+        batch.draw(AssetLoader.grass, getX(), getY());
     }
 }

@@ -51,15 +51,12 @@ public class Pipe extends Scrollable {
 
     @Override
     public void render(SpriteBatch batch, float runTime) {
-        batch.draw(AssetLoader.bar, getX(), getY(), getWidth(),
-                getHeight());
+        batch.draw(AssetLoader.bar, getX(), getY(), getWidth(), getHeight());
         batch.draw(AssetLoader.bar, getX(), getY() + getHeight() + VERTICAL_GAP,
                 getWidth(), GameRenderer.WORLD_HEIGHT - getHeight());
 
-        batch.draw(AssetLoader.skullDown, getX() - 1,
-                getY() + getHeight() - 14, 24, 14);
-        batch.draw(AssetLoader.skullUp, getX() - 1,
-                getY() + getHeight() + VERTICAL_GAP, 24, 14);
+        batch.draw(AssetLoader.skullDown, getX() - 1, getY() + getHeight() - 14);
+        batch.draw(AssetLoader.skullUp, getX() - 1, getY() + getHeight() + VERTICAL_GAP);
     }
 
     public boolean collides(Bird bird) {
