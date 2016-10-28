@@ -19,8 +19,8 @@ public class ScrollHandler implements GameObject {
 
     public ScrollHandler(GameWorld gameWorld, float yPos) {
         this.gameWorld = gameWorld;
-        frontGrass = new Grass(0, yPos, GRASS_WIDTH, GRASS_HEIGHT, SCROLL_SPEED);
-        backGrass = new Grass(frontGrass.getTailX(), yPos, GRASS_WIDTH, GRASS_HEIGHT, SCROLL_SPEED);
+        frontGrass = new Grass(0, yPos + GRASS_HEIGHT, GRASS_WIDTH, GRASS_HEIGHT, SCROLL_SPEED);
+        backGrass = new Grass(frontGrass.getTailX(), yPos + GRASS_HEIGHT, GRASS_WIDTH, GRASS_HEIGHT, SCROLL_SPEED);
 
         pipe1 = new Pipe(PIPE_START_X, yPos + GRASS_HEIGHT, PIPE_WIDTH, PIPE_HEIGHT, SCROLL_SPEED);
         pipe2 = new Pipe(pipe1.getTailX() + PIPE_GAP, yPos + GRASS_HEIGHT, PIPE_WIDTH, PIPE_HEIGHT, SCROLL_SPEED);

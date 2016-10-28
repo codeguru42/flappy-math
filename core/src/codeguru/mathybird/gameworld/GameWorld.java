@@ -8,7 +8,7 @@ import codeguru.mathybird.gameobjects.Bird;
 import codeguru.mathybird.gameobjects.ScrollHandler;
 
 public class GameWorld {
-    private ScrollHandler scroller = new ScrollHandler(this, 26.0f);
+    private ScrollHandler scroller = new ScrollHandler(this, 15.0f);
     private Bird bird;
     private Rectangle ground = new Rectangle(0.0f, 0.0f, GameRenderer.GROUND_WIDTH, GameRenderer.GROUND_HEIGHT);
     private int score = 0;
