@@ -8,6 +8,7 @@ public class ScrollHandler implements GameObject {
     public static final int SCROLL_SPEED = -59;
     public static final int PIPE_GAP = 49;
     public static final int PIPE_START_X = 210;
+    public static final int GRASS_WIDTH = 140;
     public static final int GRASS_HEIGHT = 11;
     public static final int PIPE_WIDTH = 22;
     public static final int PIPE_HEIGHT = 60;
@@ -18,8 +19,8 @@ public class ScrollHandler implements GameObject {
 
     public ScrollHandler(GameWorld gameWorld, float yPos) {
         this.gameWorld = gameWorld;
-        frontGrass = new Grass(0, yPos, 143, GRASS_HEIGHT, SCROLL_SPEED);
-        backGrass = new Grass(frontGrass.getTailX(), yPos, 143, 11, SCROLL_SPEED);
+        frontGrass = new Grass(0, yPos, GRASS_WIDTH, GRASS_HEIGHT, SCROLL_SPEED);
+        backGrass = new Grass(frontGrass.getTailX(), yPos, GRASS_WIDTH, GRASS_HEIGHT, SCROLL_SPEED);
 
         pipe1 = new Pipe(PIPE_START_X, yPos + GRASS_HEIGHT, PIPE_WIDTH, PIPE_HEIGHT, SCROLL_SPEED);
         pipe2 = new Pipe(pipe1.getTailX() + PIPE_GAP, yPos + GRASS_HEIGHT, PIPE_WIDTH, PIPE_HEIGHT, SCROLL_SPEED);
