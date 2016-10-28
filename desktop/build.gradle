@@ -6,7 +6,7 @@ sourceSets.main.java.srcDirs = [ "src/" ]
 project.ext {
     mainClassName = "codeguru.mathybird.desktop.DesktopLauncher"
     assetsDir = new File("../android/assets");
-    texturePacker = ["assets", "../android/assets", "texture"]
+    texturePacker = ["desktop/assets", "android/assets", "texture"]
 }
 
 task run(dependsOn: classes, type: JavaExec) {
