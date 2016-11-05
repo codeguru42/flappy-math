@@ -50,6 +50,7 @@ public class GameRenderer {
         shapeRenderer.end();
 
         batch.begin();
+        batch.draw(AssetLoader.bg, 0.0f, GROUND_HEIGHT);
         scroller.render(batch, runTime);
         bird.render(batch, runTime);
 
