@@ -40,7 +40,7 @@ public class GameRenderer {
     }
 
     public void render(float runTime) {
-        Gdx.gl.glClearColor(55 / 255.0f, 80 / 255.0f, 100 / 255.0f, 1.0f);
+        Gdx.gl.glClearColor(0x81 / 255.0f, 0xD2 / 255.0f, 0xE7 / 255.0f, 1.0f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         // Draw Dirt
