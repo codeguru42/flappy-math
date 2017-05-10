@@ -5,7 +5,9 @@ import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.ScreenAdapter;
 
 import codeguru.mathybird.MathyBirdGame;
+import codeguru.mathybird.gameobjects.Bird;
 import codeguru.mathybird.gameworld.GameRenderer;
+import codeguru.mathybird.gameworld.GameWorld;
 import codeguru.mathybird.util.ReadyInputHandler;
 
 public class ReadyScreen extends ScreenAdapter {
@@ -13,8 +15,8 @@ public class ReadyScreen extends ScreenAdapter {
     private GameRenderer renderer;
     private float runTime = 0.0f;
 
-    public ReadyScreen(MathyBirdGame game, GameRenderer renderer) {
-        this.input = new ReadyInputHandler(game);
+    public ReadyScreen(MathyBirdGame game, GameRenderer renderer, Bird bird) {
+        this.input = new ReadyInputHandler(game, bird);
         this.renderer = renderer;
     }
 
