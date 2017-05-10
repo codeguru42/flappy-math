@@ -11,6 +11,7 @@ import codeguru.mathybird.screens.ReadyScreen;
 import codeguru.mathybird.util.AssetLoader;
 
 public class MathyBirdGame extends Game {
+    private Screen readyScreen;
     private Screen gameScreen;
 
 	@Override
@@ -24,8 +25,9 @@ public class MathyBirdGame extends Game {
 
         GameWorld world = new GameWorld(midPointY);
         GameRenderer renderer = new GameRenderer(world);
+        readyScreen = new ReadyScreen(renderer);
         gameScreen = new GameScreen(world, renderer);
-		setScreen(gameScreen);
+		setScreen(readyScreen);
 	}
 
     @Override

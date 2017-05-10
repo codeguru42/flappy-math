@@ -3,14 +3,18 @@ package codeguru.mathybird.screens;
 import com.badlogic.gdx.ScreenAdapter;
 
 import codeguru.mathybird.gameworld.GameRenderer;
-import codeguru.mathybird.gameworld.GameWorld;
 
 public class ReadyScreen extends ScreenAdapter {
-    private GameWorld world;
     private GameRenderer renderer;
+    private float runTime = 0.0f;
 
-    public ReadyScreen(int worldWidth, int worldHeight) {
-        world = new GameWorld(worldHeight / 2);
-        renderer = new GameRenderer(world);
+    public ReadyScreen(GameRenderer renderer) {
+        this.renderer = renderer;
+    }
+
+    @Override
+    public void render(float delta) {
+        runTime += delta;
+        renderer.render(runTime);
     }
 }
