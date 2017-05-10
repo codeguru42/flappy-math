@@ -39,7 +39,16 @@ public class GameRenderer {
         scroller = world.getScroller();
     }
 
-    public void render(float runTime) {
+    public void renderReady(float runTime) {
+        render(runTime);
+    }
+
+    public void renderGame(float runTime) {
+        render(runTime);
+        renderScore();
+    }
+
+    private void render(float runTime) {
         Gdx.gl.glClearColor(0x81 / 255.0f, 0xD2 / 255.0f, 0xE7 / 255.0f, 1.0f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
@@ -53,8 +62,12 @@ public class GameRenderer {
         batch.draw(AssetLoader.bg, 0.0f, GROUND_HEIGHT);
         scroller.render(batch, runTime);
         bird.render(batch, runTime);
+        batch.end();
+    }
 
+    private void renderScore() {
         String score = world.getScore() + "";
+        batch.begin();
         AssetLoader.shadow.draw(batch, score,
                 (136 / 2) - (3 * score.length()), WORLD_HEIGHT - SCORE_POSITION_FROM_TOP - 1);
         AssetLoader.font.draw(batch, "" + score,

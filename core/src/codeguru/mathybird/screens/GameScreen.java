@@ -28,6 +28,6 @@ public class GameScreen extends ScreenAdapter {
     public void render(float delta) {
         runTime += delta;
         world.update(delta);
-        renderer.render(runTime);
+        renderer.renderGame(runTime);
     }
 }

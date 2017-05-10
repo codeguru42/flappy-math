@@ -7,7 +7,6 @@ import com.badlogic.gdx.ScreenAdapter;
 import codeguru.mathybird.MathyBirdGame;
 import codeguru.mathybird.gameobjects.Bird;
 import codeguru.mathybird.gameworld.GameRenderer;
-import codeguru.mathybird.gameworld.GameWorld;
 import codeguru.mathybird.util.ReadyInputHandler;
 
 public class ReadyScreen extends ScreenAdapter {
@@ -23,7 +22,7 @@ public class ReadyScreen extends ScreenAdapter {
     @Override
     public void render(float delta) {
         runTime += delta;
-        renderer.render(runTime);
+        renderer.renderReady(runTime);
     }
 
     @Override
