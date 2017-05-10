@@ -8,14 +8,20 @@ import codeguru.mathybird.gameworld.GameWorld;
 import codeguru.mathybird.util.GameInputHandler;
 
 public class GameScreen extends ScreenAdapter {
+    private GameInputHandler input;
     private GameWorld world;
     private GameRenderer renderer;
     private float runTime = 0.0f;
 
     public GameScreen(GameWorld world, GameRenderer renderer) {
-        Gdx.input.setInputProcessor(new GameInputHandler(world.getBird()));
+        input = new GameInputHandler(world.getBird());
         this.world = world;
         this.renderer = renderer;
+    }
+
+    @Override
+    public void show() {
+        Gdx.input.setInputProcessor(input);
     }
 
     @Override
