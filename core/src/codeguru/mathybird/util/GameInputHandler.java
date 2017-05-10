@@ -4,10 +4,10 @@ import com.badlogic.gdx.InputAdapter;
 
 import codeguru.mathybird.gameobjects.Bird;
 
-public class InputHandler extends InputAdapter {
+public class GameInputHandler extends InputAdapter {
     private Bird myBird;
 
-    public InputHandler(Bird bird) {
+    public GameInputHandler(Bird bird) {
         myBird = bird;
     }
 

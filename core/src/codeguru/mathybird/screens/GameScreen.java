@@ -1,12 +1,11 @@
 package codeguru.mathybird.screens;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.ScreenAdapter;
 
 import codeguru.mathybird.gameworld.GameRenderer;
 import codeguru.mathybird.gameworld.GameWorld;
-import codeguru.mathybird.util.InputHandler;
+import codeguru.mathybird.util.GameInputHandler;
 
 public class GameScreen extends ScreenAdapter {
     private GameWorld world;
@@ -22,7 +21,7 @@ public class GameScreen extends ScreenAdapter {
 
         world = new GameWorld(midPointY);
         renderer = new GameRenderer(world);
-        Gdx.input.setInputProcessor(new InputHandler(world.getBird()));
+        Gdx.input.setInputProcessor(new GameInputHandler(world.getBird()));
     }
 
     @Override
