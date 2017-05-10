@@ -12,16 +12,10 @@ public class GameScreen extends ScreenAdapter {
     private GameRenderer renderer;
     private float runTime = 0.0f;
 
-    public GameScreen() {
-        float screenWidth = Gdx.graphics.getWidth();
-        float screenHeight = Gdx.graphics.getHeight();
-        float gameWidth = 136;
-        float gameHeight = screenHeight / (screenWidth / gameWidth);
-        int midPointY = (int) (gameHeight / 2);
-
-        world = new GameWorld(midPointY);
-        renderer = new GameRenderer(world);
+    public GameScreen(GameWorld world, GameRenderer renderer) {
         Gdx.input.setInputProcessor(new GameInputHandler(world.getBird()));
+        this.world = world;
+        this.renderer = renderer;
     }
 
     @Override
