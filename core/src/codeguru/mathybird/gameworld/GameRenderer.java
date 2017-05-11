@@ -15,7 +15,9 @@ public class GameRenderer {
     public static final float WORLD_HEIGHT = 204.0f;
     public static final float GROUND_WIDTH = WORLD_WIDTH;
     public static final float GROUND_HEIGHT = 26.0f;
-    private static final int SCORE_POSITION_FROM_TOP = 11;
+    private static final float SCORE_POSITION_FROM_TOP = 11.0f;
+    private static final float READY_X = (WORLD_WIDTH / 2.0f) - 42.0f;
+    private static final float READY_Y = WORLD_HEIGHT - 70.0f;
 
     private final GameWorld world;
     private final ShapeRenderer shapeRenderer = new ShapeRenderer();
@@ -41,6 +43,10 @@ public class GameRenderer {
 
     public void renderReady(float runTime) {
         render(runTime);
+        batch.begin();
+        AssetLoader.shadow.draw(batch, "Touch me", READY_X, READY_Y);
+        AssetLoader.font.draw(batch, "Touch me", READY_X + 1, READY_Y - 1);
+        batch.end();
     }
 
     public void renderGame(float runTime) {
