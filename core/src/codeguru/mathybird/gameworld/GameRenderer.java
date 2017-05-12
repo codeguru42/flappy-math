@@ -21,6 +21,7 @@ public class GameRenderer {
     private static final float GAME_OVER_X = (WORLD_WIDTH / 2.0f) - 45.0f;
     private static final float GAME_OVER_Y = WORLD_HEIGHT - 70.0f;
     private static final String GAME_OVER = "Game Over";
+    private static final String TOUCH_ME = "Touch me";
 
     private final GameWorld world;
     private final ShapeRenderer shapeRenderer = new ShapeRenderer();
@@ -47,8 +48,8 @@ public class GameRenderer {
     public void renderReady(float runTime) {
         render(runTime);
         batch.begin();
-        AssetLoader.shadow.draw(batch, "Touch me", READY_X, READY_Y);
-        AssetLoader.font.draw(batch, "Touch me", READY_X + 1, READY_Y - 1);
+        AssetLoader.shadow.draw(batch, TOUCH_ME, READY_X, READY_Y);
+        AssetLoader.font.draw(batch, TOUCH_ME, READY_X + 1, READY_Y - 1);
         batch.end();
     }
 
