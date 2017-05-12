@@ -54,6 +54,10 @@ public class GameRenderer {
         renderScore();
     }
 
+    public void renderGameOver(float runTime) {
+        render(runTime);
+    }
+
     private void render(float runTime) {
         Gdx.gl.glClearColor(0x81 / 255.0f, 0xD2 / 255.0f, 0xE7 / 255.0f, 1.0f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
