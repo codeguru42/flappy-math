@@ -29,7 +29,7 @@ public class MathyBirdGame extends Game {
         GameRenderer renderer = new GameRenderer(world);
         readyScreen = new ReadyScreen(this, renderer, world.getBird());
         gameScreen = new GameScreen(world, renderer);
-        gameOverScreen = new GameOverScreen(renderer);
+        gameOverScreen = new GameOverScreen(this, renderer);
 		setScreen(readyScreen);
 	}
 
