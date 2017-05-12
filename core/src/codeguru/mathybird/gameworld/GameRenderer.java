@@ -74,10 +74,9 @@ public class GameRenderer {
     private void renderScore() {
         String score = world.getScore() + "";
         batch.begin();
-        AssetLoader.shadow.draw(batch, score,
-                (136 / 2) - (3 * score.length()), SCORE_Y - 1);
-        AssetLoader.font.draw(batch, "" + score,
-                (136 / 2) - (3 * score.length() - 1), SCORE_Y);
+        float scoreX = WORLD_WIDTH / 2.0f - 3.0f * score.length();
+        AssetLoader.shadow.draw(batch, score, scoreX, SCORE_Y - 1);
+        AssetLoader.font.draw(batch, "" + score, scoreX + 1, SCORE_Y);
         batch.end();
     }
 }
