@@ -7,11 +7,13 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class AssetLoader {
-    public static TextureAtlas atlas;
+    private static TextureAtlas atlas;
     public static TextureRegion bg, grass;
 
     public static Animation birdAnimation;
-    public static TextureRegion bird, birdDown, birdUp;
+    public static TextureRegion bird;
+    private static TextureRegion birdDown;
+    private static TextureRegion birdUp;
 
     public static TextureRegion skullUp, skullDown, bar;
     public static BitmapFont font, shadow;

@@ -11,11 +11,11 @@ import codeguru.mathybird.gameobjects.ScrollHandler;
 import codeguru.mathybird.util.AssetLoader;
 
 public class GameRenderer {
-    public static final float WORLD_WIDTH = 136.0f;
+    private static final float WORLD_WIDTH = 136.0f;
     public static final float WORLD_HEIGHT = 204.0f;
     public static final float GROUND_WIDTH = WORLD_WIDTH;
     public static final float GROUND_HEIGHT = 26.0f;
-    public static final int SCORE_POSITION_FROM_TOP = 11;
+    private static final int SCORE_POSITION_FROM_TOP = 11;
 
     private final GameWorld world;
     private final ShapeRenderer shapeRenderer = new ShapeRenderer();

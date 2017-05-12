@@ -5,13 +5,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import codeguru.mathybird.gameworld.GameWorld;
 
 public class ScrollHandler implements GameObject {
-    public static final int SCROLL_SPEED = -59;
-    public static final int PIPE_GAP = 49;
-    public static final int PIPE_START_X = 210;
-    public static final int GRASS_WIDTH = 140;
-    public static final int GRASS_HEIGHT = 11;
-    public static final int PIPE_WIDTH = 22;
-    public static final int PIPE_HEIGHT = 60;
+    private static final int SCROLL_SPEED = -59;
+    private static final int PIPE_GAP = 49;
+    private static final int PIPE_START_X = 210;
+    private static final int GRASS_WIDTH = 140;
+    private static final int GRASS_HEIGHT = 11;
+    private static final int PIPE_WIDTH = 22;
+    private static final int PIPE_HEIGHT = 60;
 
     private Grass frontGrass, backGrass;
     private Pipe pipe1, pipe2, pipe3;

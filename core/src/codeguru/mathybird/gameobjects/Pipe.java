@@ -11,9 +11,9 @@ import codeguru.mathybird.gameworld.GameRenderer;
 import codeguru.mathybird.util.AssetLoader;
 
 public class Pipe extends Scrollable {
-    public static final int VERTICAL_GAP = 45;
-    public static final int SKULL_WIDTH = 24;
-    public static final int SKULL_HEIGHT = 11;
+    private static final int VERTICAL_GAP = 45;
+    private static final int SKULL_WIDTH = 24;
+    private static final int SKULL_HEIGHT = 11;
 
     private Random r;
 

@@ -100,7 +100,7 @@ public class Bird implements GameObject {
         return position.x;
     }
 
-    public float getY() {
+    private float getY() {
         return position.y;
     }
 
@@ -108,11 +108,11 @@ public class Bird implements GameObject {
         return width;
     }
 
-    public float getHeight() {
+    private float getHeight() {
         return height;
     }
 
-    public float getRotation() {
+    private float getRotation() {
         return rotation;
     }
 
@@ -124,11 +124,11 @@ public class Bird implements GameObject {
         return isAlive;
     }
 
-    public boolean isFalling() {
+    private boolean isFalling() {
         return velocity.y < -110;
     }
 
-    public boolean shouldntFlap() {
+    private boolean shouldntFlap() {
         return velocity.y < -70 || !isAlive;
     }
 }

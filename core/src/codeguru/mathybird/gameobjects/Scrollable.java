@@ -4,10 +4,10 @@ import com.badlogic.gdx.math.Vector2;
 
 public abstract class Scrollable implements GameObject {
     protected Vector2 position;
-    protected Vector2 velocity;
+    private Vector2 velocity;
     protected int width;
     protected int height;
-    protected boolean isScrolledLeft;
+    private boolean isScrolledLeft;
 
     public Scrollable(float x, float y, int width, int height, float scrollSpeed) {
         position = new Vector2(x, y);
