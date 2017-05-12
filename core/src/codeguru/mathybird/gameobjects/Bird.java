@@ -1,5 +1,6 @@
 package codeguru.mathybird.gameobjects;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
@@ -130,5 +131,15 @@ public class Bird implements GameObject {
 
     private boolean shouldntFlap() {
         return velocity.y < -70 || !isAlive;
+    }
+
+    public void reset(float y) {
+        rotation = 0;
+        position.y = y;
+        velocity.x = 0;
+        velocity.y = 0;
+        acceleration.x = 0;
+        acceleration.y = -460;
+        isAlive = true;
     }
 }

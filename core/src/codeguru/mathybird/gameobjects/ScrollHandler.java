@@ -38,20 +38,20 @@ public class ScrollHandler implements GameObject {
         // Check if any of the pipes are scrolled left,
         // and reset accordingly
         if (pipe1.isScrolledLeft()) {
-            pipe1.reset(pipe3.getTailX() + PIPE_GAP);
+            pipe1.reset(pipe3.getTailX() + PIPE_GAP, SCROLL_SPEED);
         } else if (pipe2.isScrolledLeft()) {
-            pipe2.reset(pipe1.getTailX() + PIPE_GAP);
+            pipe2.reset(pipe1.getTailX() + PIPE_GAP, SCROLL_SPEED);
 
         } else if (pipe3.isScrolledLeft()) {
-            pipe3.reset(pipe2.getTailX() + PIPE_GAP);
+            pipe3.reset(pipe2.getTailX() + PIPE_GAP, SCROLL_SPEED);
         }
 
         // Same with grass
         if (frontGrass.isScrolledLeft()) {
-            frontGrass.reset(backGrass.getTailX());
+            frontGrass.reset(backGrass.getTailX(), SCROLL_SPEED);
 
         } else if (backGrass.isScrolledLeft()) {
-            backGrass.reset(frontGrass.getTailX());
+            backGrass.reset(frontGrass.getTailX(), SCROLL_SPEED);
 
         }
     }
@@ -96,5 +96,13 @@ public class ScrollHandler implements GameObject {
         pipe1.stop();
         pipe2.stop();
         pipe3.stop();
+    }
+
+    public void reset() {
+        frontGrass.reset(0.0f, SCROLL_SPEED);
+        backGrass.reset(frontGrass.getTailX(), SCROLL_SPEED);
+        pipe1.reset(210.0f, SCROLL_SPEED);
+        pipe2.reset(pipe1.getTailX() + PIPE_GAP, SCROLL_SPEED);
+        pipe3.reset(pipe2.getTailX() + PIPE_GAP, SCROLL_SPEED);
     }
 }

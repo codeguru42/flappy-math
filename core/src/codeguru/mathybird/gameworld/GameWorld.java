@@ -13,10 +13,12 @@ public class GameWorld {
     private Bird bird;
     private Rectangle ground = new Rectangle(0.0f, 0.0f, GameRenderer.GROUND_WIDTH, GameRenderer.GROUND_HEIGHT);
     private int score = 0;
+    private float birdStartY;
 
     public GameWorld(MathyBirdGame game, int midPointY) {
         this.game = game;
-        bird = new Bird(33, midPointY - 5, 17, 12);
+        birdStartY = midPointY - 5.0f;
+        bird = new Bird(33, birdStartY, 17, 12);
     }
 
     public void update(float delta) {
@@ -52,5 +54,11 @@ public class GameWorld {
 
     public void addScore(int increment) {
         score += increment;
+    }
+
+    public void reset() {
+        score = 0;
+        bird.reset(birdStartY);
+        scroller.reset();
     }
 }

@@ -25,8 +25,9 @@ public abstract class Scrollable implements GameObject {
     }
 
     // Reset: Should Override in subclass for more specific behavior.
-    public void reset(float newX) {
+    public void reset(float newX, float scrollSpeed) {
         position.x = newX;
+        velocity.x = scrollSpeed;
         isScrolledLeft = false;
     }
 
