@@ -15,7 +15,7 @@ public class AssetLoader {
     public static TextureRegion bird;
 
     public static TextureRegion skullUp, skullDown, bar;
-    public static BitmapFont font, shadow;
+    public static BitmapFont font, shadow, whiteFont;
 
     public static Sound dead;
     public static Sound flap;
@@ -44,6 +44,8 @@ public class AssetLoader {
         font.getData().setScale(.25f, .25f);
         shadow = new BitmapFont(Gdx.files.internal("shadow.fnt"));
         shadow.getData().setScale(.25f, .25f);
+        whiteFont = new BitmapFont(Gdx.files.internal("whitetext.fnt"));
+        whiteFont.getData().setScale(.1f, .1f);
 
         loadAudioResources();
     }
