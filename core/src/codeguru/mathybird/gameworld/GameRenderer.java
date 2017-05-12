@@ -15,7 +15,7 @@ public class GameRenderer {
     public static final float WORLD_HEIGHT = 204.0f;
     public static final float GROUND_WIDTH = WORLD_WIDTH;
     public static final float GROUND_HEIGHT = 26.0f;
-    private static final float SCORE_POSITION_FROM_TOP = 11.0f;
+    private static final float SCORE_Y = WORLD_HEIGHT - 11.0f;
     private static final float READY_X = (WORLD_WIDTH / 2.0f) - 42.0f;
     private static final float READY_Y = WORLD_HEIGHT - 70.0f;
 
@@ -75,9 +75,9 @@ public class GameRenderer {
         String score = world.getScore() + "";
         batch.begin();
         AssetLoader.shadow.draw(batch, score,
-                (136 / 2) - (3 * score.length()), WORLD_HEIGHT - SCORE_POSITION_FROM_TOP - 1);
+                (136 / 2) - (3 * score.length()), SCORE_Y - 1);
         AssetLoader.font.draw(batch, "" + score,
-                (136 / 2) - (3 * score.length() - 1), WORLD_HEIGHT - SCORE_POSITION_FROM_TOP);
+                (136 / 2) - (3 * score.length() - 1), SCORE_Y);
         batch.end();
     }
 }
