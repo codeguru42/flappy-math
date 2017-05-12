@@ -1,7 +1,6 @@
 package codeguru.mathybird;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
 
 import codeguru.mathybird.screens.GameScreen;
 import codeguru.mathybird.util.AssetLoader;
