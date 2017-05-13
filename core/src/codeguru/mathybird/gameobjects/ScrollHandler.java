@@ -28,9 +28,11 @@ public class ScrollHandler implements GameObject {
     }
 
     public void update(float delta) {
-        // Update our objects
-        frontGrass.update(delta);
-        backGrass.update(delta);
+        updateGrass(delta);
+        updatePipes(delta);
+    }
+
+    public void updatePipes(float delta) {
         pipe1.update(delta);
         pipe2.update(delta);
         pipe3.update(delta);
@@ -45,6 +47,11 @@ public class ScrollHandler implements GameObject {
         } else if (pipe3.isScrolledLeft()) {
             pipe3.reset(pipe2.getTailX() + PIPE_GAP, SCROLL_SPEED);
         }
+    }
+
+    public void updateGrass(float delta) {
+        frontGrass.update(delta);
+        backGrass.update(delta);
 
         // Same with grass
         if (frontGrass.isScrolledLeft()) {
