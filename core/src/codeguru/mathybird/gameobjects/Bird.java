@@ -79,6 +79,7 @@ public class Bird implements GameObject {
     public void onClick() {
         if (isAlive) {
             velocity.y = 140;
+            AssetLoader.flap.play();
         }
     }
 

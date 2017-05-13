@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.Rectangle;
 import codeguru.mathybird.MathyBirdGame;
 import codeguru.mathybird.gameobjects.Bird;
 import codeguru.mathybird.gameobjects.ScrollHandler;
+import codeguru.mathybird.util.AssetLoader;
 
 public class GameWorld {
     private final MathyBirdGame game;
@@ -29,6 +30,7 @@ public class GameWorld {
             // Clean up on game over
             scroller.stop();
             bird.die();
+            AssetLoader.dead.play();
         }
 
         if (Intersector.overlaps(bird.getBoundingCircle(), ground)) {
@@ -54,6 +56,7 @@ public class GameWorld {
 
     public void addScore(int increment) {
         score += increment;
+        AssetLoader.coin.play();
     }
 
     public void reset() {
