@@ -1,6 +1,7 @@
 package codeguru.mathybird.util;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -15,6 +16,10 @@ public class AssetLoader {
 
     public static TextureRegion skullUp, skullDown, bar;
     public static BitmapFont font, shadow;
+
+    public static Sound dead;
+    public static Sound flap;
+    public static Sound coin;
 
     public static void load() {
         atlas = new TextureAtlas("texture.atlas");
@@ -39,9 +44,20 @@ public class AssetLoader {
         font.getData().setScale(.25f, .25f);
         shadow = new BitmapFont(Gdx.files.internal("shadow.fnt"));
         shadow.getData().setScale(.25f, .25f);
+
+        loadAudioResources();
+    }
+
+    private static void loadAudioResources() {
+        dead = Gdx.audio.newSound(Gdx.files.internal("audio/dead.wav"));
+        flap = Gdx.audio.newSound(Gdx.files.internal("audio/flap.wav"));
+        coin = Gdx.audio.newSound(Gdx.files.internal("audio/coin.wav"));
     }
 
     public static void dispose() {
         atlas.dispose();
+        dead.dispose();
+        flap.dispose();
+        coin.dispose();
     }
 }
