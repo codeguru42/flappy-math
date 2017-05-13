@@ -12,8 +12,6 @@ public class AssetLoader {
 
     public static Animation birdAnimation;
     public static TextureRegion bird;
-    private static TextureRegion birdDown;
-    private static TextureRegion birdUp;
 
     public static TextureRegion skullUp, skullDown, bar;
     public static BitmapFont font, shadow;
@@ -23,11 +21,11 @@ public class AssetLoader {
 
         bg = atlas.findRegion("bg");
         grass = atlas.findRegion("grass");
-        birdDown = atlas.findRegion("bird-down");
         bird = atlas.findRegion("bird");
-        birdUp = atlas.findRegion("bird-up");
 
-        TextureRegion[] birds = { birdDown, bird, birdUp };
+        TextureRegion birdDown = atlas.findRegion("bird-down");
+        TextureRegion birdUp = atlas.findRegion("bird-up");
+        TextureRegion[] birds = {birdDown, bird, birdUp};
         birdAnimation = new Animation(0.06f, birds);
         birdAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
