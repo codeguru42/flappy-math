@@ -13,7 +13,7 @@ import codeguru.mathybird.util.AssetLoader;
 public class Pipe extends Scrollable {
     private static final int VERTICAL_GAP = 45;
     private static final int SKULL_WIDTH = 24;
-    private static final int SKULL_HEIGHT = 11;
+    private static final int SKULL_HEIGHT = 14;
 
     private Random r;
 
